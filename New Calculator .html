@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport",content="width=device-width",initial-scale="1.0"/>
+  <title>Hello, World!</title>
+  <style>
+  h1{
+    text-align:center;
+  }
+  .nami{
+   border:none;
+    margin-top:5rem;
+    margin-left:0.5rem;
+    height:70px;
+    width:90%;
+    text-align:right;
+    font-size:2rem;
+    outline:none;
+  }
+  
+  button{ 
+   
+    height:39px;
+    width:30px;
+    padding:30px;
+    margin:4.5px;
+    background-color:rgb(1,110,255);
+    color:white;
+    font-size:23px;
+    text-align:center;
+    border:none;
+    border-radius:5px;
+  }
+ 
+  </style>
+</head>
+<body>
+  <div class="may">
+  <h1>
+   Calculator
+  </h1>
+ <div id="enput" class="enput"></div>
+  <input type="text" id="enpt" class="nami" readonly>
+  
+    <br>  
+    <br> 
+  <button onclick="number('1')">1</button>
+  <button onclick="number('2')">2</button>
+  <button onclick="number('3')">3</button>
+  <button onclick="number('4')">4</button>
+  <br>
+  <button onclick="number('5')">5</button>
+  <button onclick="number('6')">6</button>
+  <button onclick="number('7')">7</button>
+  <button onclick="number('8')">8</button>
+  <br>
+  <button onclick="number('9')">9</button>
+  <button onclick="number('0')">0</button>
+  <button onclick="operations('*')">*</button>
+  <button onclick="operations('+')">+</button>
+  <br>
+  <button onclick="operations('-')">-</button>
+  <button onclick="operations('/')">/</button>
+  <button onclick="lear()">C</button>
+  <button onclick="result()">=</button>
+  </div>
+  <script>
+ let Input = document.getElementById( "enpt");
+ function number(num){
+   Input.value += num;
+ };
+ 
+ function operations(opt){
+Input.value += opt;
+ }   
+  
+  function lear() {
+    const Input = document.getElementById("enpt");
+    Input.value = "";
+  }
+  function result() {
+    try{
+    Input.value = eval(Input.value);
+    }
+    catch(error){
+      alert("bad expression");
+      clear();
+    }
+  }
+ 
+  
+  
+  </script>
+</body>
+</html>
